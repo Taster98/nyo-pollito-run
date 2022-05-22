@@ -1,0 +1,72 @@
+{
+  "name": "nyo-pollito-run",
+  "version": "1.0.0",
+  "description": "Simple platform game with learning purpose",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "npm start",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Taster98/nyo-pollito-run.git"
+  },
+  "keywords": [
+    "platform",
+    "game"
+  ],
+  "author": "Luigi Gesuele",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Taster98/nyo-pollito-run/issues"
+  },
+  "homepage": "https://github.com/Taster98/nyo-pollito-run#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "^17.0.0"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "rpmbuild": "^0.0.23"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./build/icons/icon.ico"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "nyo_pollito_run"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "icon": "./build/icons/icon.ico"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
